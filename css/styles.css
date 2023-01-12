@@ -96,7 +96,8 @@ img {
   display: block;
   transition: color var(--trans);
 }
-.link-studio.current::after, .link-portfolio.current::after  {
+.link-studio.current::after,
+ .link-portfolio.current::after  {
   content: "";
 
   position: absolute;
@@ -109,7 +110,7 @@ img {
   background-color: #404bbf;
   border-radius: 2px;
   transform: translatey(29px);
-  transition: opacity var(--trans), transform var(--trans);
+  
 }
 
 
@@ -126,9 +127,9 @@ img {
 .link-contacts:focus,
 .link-studio:active,
 .link-portfolio:active,
-.link-contacts:active 
+.link-contacts:active, 
 .link-studio.current,
-.link-portfolio.current{
+.link-portfolio.current {
   color: #404bbf;
 }
 
@@ -376,7 +377,8 @@ img {
   align-items: center;
   justify-content: center;
   fill: #8e8f99;
-  transition:  border-color var(--trans);
+  transition:  border-color var(--trans),
+  fill var(--trans);
 }
 
 .customer-item-icon:hover,
@@ -407,16 +409,17 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--web-color);
-
-  margin-bottom: 16px;
 }
 .logo-studio-footer {
+  
   color: var(--cloud-background);
+
 }
 
 .footer-text {
   line-height: 1.5;
   color: var(--footer-text-color);
+  margin-top: 16px;
 }
 
 .footer-link {
@@ -454,7 +457,7 @@ img {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--cloud-background);
-  transition: ackground-color var(--trans);
+  transition: background-color var(--trans);
 }
 
 .footer-link-svg:hover,
@@ -576,7 +579,8 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-  transition: opasity var(--trans), visibility var(--trans);
+  transition: opasity var(--trans),
+  visibility var(--trans);
 }
 
 .backdrop.is-hidden {
@@ -588,12 +592,16 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)  scaleY(1);
   width: 408px;
-  height: 576px;
+  min-height: 576px;
   border-radius: 4px;
   background-color: rgba(252, 252, 252, 1);
+  transition: transform var(--trans);
   
+}
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scaleY(0);
 }
 .modal-btn {
   position: absolute;
